@@ -50,20 +50,6 @@ namespace TicTacToe
             }
         }
 
-        //Command historyCommand;
-        //public Command HistoryCommand
-        //{
-        //    get
-        //    {
-        //        return historyCommand ??
-        //            (historyCommand = new Command(async () =>
-        //            {
-        //                await Page.Navigation.PushAsync(new HistoryPage());
-        //            }));
-                   
-        //    }
-        //}
-
         async Task StartGame()
         {
             if(string.IsNullOrWhiteSpace(Settings.Player1) || string.IsNullOrWhiteSpace(Settings.Player2))

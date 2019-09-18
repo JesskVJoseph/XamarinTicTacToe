@@ -5,7 +5,7 @@ namespace TicTacToe
     public class SimpleAI
     {
 
-    // This will return the best possible move for the player 
+    // This will return random number from the remaning avaliable postions
      public  int FindBestMove(string[,] board)
         {
             int[] remaingPostions = new int[9];

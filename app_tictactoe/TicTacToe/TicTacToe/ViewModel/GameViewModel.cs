@@ -163,16 +163,9 @@ namespace TicTacToe
                               return;
                       }
 
-                      CurrentGame = new string[3, 3];
-                      BoardPosition0 = string.Empty;
-                      BoardPosition1 = string.Empty;
-                      BoardPosition2 = string.Empty;
-                      BoardPosition3 = string.Empty;
-                      BoardPosition4 = string.Empty;
-                      BoardPosition5 = string.Empty;
-                      BoardPosition6 = string.Empty;
-                      BoardPosition7 = string.Empty;
-                      BoardPosition8 = string.Empty;
+                      CurrentGame = new string[3, 3]; 
+                      BoardPosition0 = BoardPosition2 = BoardPosition3 = BoardPosition4 =  string.Empty;
+                      BoardPosition5 = BoardPosition6 = BoardPosition7 = BoardPosition8 =  string.Empty;
                       Player1Up = true;
                       IsGameOver = false;
                       Moves = 0;
@@ -193,14 +186,13 @@ namespace TicTacToe
 
 
         async Task Play(string number)
-        {
-          
+        {   
             if (IsGameOver)
                 return;
 
             int x = 0;
             int y = 0;
-            Move currentPostion = GetMatrixPosition(number);
+            Move currentPostion = GetPosition(number);
             x = currentPostion.row;
             y = currentPostion.col;
 
@@ -251,7 +243,7 @@ namespace TicTacToe
                     return;
             }
         }
-        private Move GetMatrixPosition(string postion)
+        private Move GetPosition(string postion)
         {
             Move currentPostion = new Move();
 
@@ -290,12 +282,10 @@ namespace TicTacToe
                 case "8":
                     currentPostion.row = 2;
                     currentPostion.col = 2;
-                    break;
-              
+                    break; 
             }
 
             return currentPostion;
-
         }
         private string GetImageName(int x, int y)
         {
@@ -320,7 +310,6 @@ namespace TicTacToe
 
             for (int i = 0; i < 8; i++)
             {
-
                 if ((winningCombos[i, 0] == "X") & (winningCombos[i, 1] == "X") & (winningCombos[i, 2] == "X"))
                 {
                     IsGameOver = true;
@@ -351,9 +340,9 @@ namespace TicTacToe
                     {
                         
                         int computerMove = simpleAI.FindBestMove(CurrentGame);
-                        Move matrixPostion = GetMatrixPosition(computerMove.ToString());
+                        Move matrixPostion = GetPosition(computerMove.ToString());
                         CurrentGame[matrixPostion.row, matrixPostion.col] = "O";
-                        await Task.Delay(100);
+                        await Task.Delay(200);
                         SetPlayerMove(computerMove.ToString(), matrixPostion.row, matrixPostion.col);
                         return;
                     }
@@ -368,28 +357,20 @@ namespace TicTacToe
 
             async Task InsertWinner(int winner)
             {
-                var winnerName = string.Empty;
-                bool isDraw = false;
-                var date = DateTime.UtcNow;
                 switch (winner)
                 {
                     case 0:
-                         isDraw = true;
                         await UserDialogs.Instance.AlertAsync("Game is a draw!. Hit Play Again to start a new game.", "Draw!");
                         break;
                     case 1:
-                        winnerName = Settings.Player1;
+                        
                         await UserDialogs.Instance.AlertAsync($"{Settings.Player1} won this game!. Hit Play Again to start a new game.", $"{Settings.Player1} Wins!");
                         break;
                     case 2:
-                        winnerName = Settings.Player2;
                         await UserDialogs.Instance.AlertAsync($"{Settings.Player2} won this game!. Hit Play Again to start a new game.", $"{Settings.Player2} Wins!");
                         break;
                 }
-
             }
-
         }
-       
     }
 }

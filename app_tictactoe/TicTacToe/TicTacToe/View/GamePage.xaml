@@ -14,11 +14,11 @@
         <!--x, y,width,height-->
         <Image Source="line_vertical_1.png" AutomationId="firstVerticalLine"   AbsoluteLayout.LayoutBounds  = "0.25,   0.5, 0.1, 0.50" AbsoluteLayout.LayoutFlags="All"/>
 
-        <Image Source="line_vertical_1.png" AutomationId="secondVerticalLine"  AbsoluteLayout.LayoutBounds  = "0.75,   0.5,  0.1,  0.50" AbsoluteLayout.LayoutFlags="All" />
+        <Image Source="line_vertical_1.png" AutomationId="secondVerticalLine"  AbsoluteLayout.LayoutBounds  = "0.75,   0.5,  0.1,  0.50" AbsoluteLayout.LayoutFlags="All"/>
 
-        <Image Source="line_horizontal_1.png" AutomationId="FirstHorizontalLine" AbsoluteLayout.LayoutBounds = "0,     0.4,  1,  0.10" AbsoluteLayout.LayoutFlags="All" />
+        <Image Source="line_horizontal_1.png" AutomationId="FirstHorizontalLine" AbsoluteLayout.LayoutBounds = "0,     0.4,  1,  0.10" AbsoluteLayout.LayoutFlags="All"/>
 
-        <Image Source="line_horizontal_1.png" AutomationId="SecondHorizontalLine" AbsoluteLayout.LayoutBounds = "0,    0.6,  1,  0.10" AbsoluteLayout.LayoutFlags="All" />
+        <Image Source="line_horizontal_1.png" AutomationId="SecondHorizontalLine" AbsoluteLayout.LayoutBounds = "0,    0.6,  1,  0.10" AbsoluteLayout.LayoutFlags="All"/>
 
         <!-- first row -->
         <Button               

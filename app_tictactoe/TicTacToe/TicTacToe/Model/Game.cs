@@ -1,10 +1,10 @@
 ﻿using System;
 
 namespace TicTacToe
-{
+{   
+    //currently this class is not used but this can be used when we do backend integration
     public class Game
     {
-
         public string Id { get; set; }
 
         public bool IsComputer { get; set; } = true;
@@ -18,20 +18,6 @@ namespace TicTacToe
         public bool IsDraw { get; set; }
 
         public int Moves { get; set; }
-
-        public DateTime DateUtc { get; set; }
-
-        [Microsoft.WindowsAzure.MobileServices.Version]
-        public string AzureVersion { get; set; }
-
-        [Newtonsoft.Json.JsonIgnore]
-        public string WinnerDisplay => IsDraw ? $"Draw!" : $"{Winner} won in {Moves} moves";
-
-        [Newtonsoft.Json.JsonIgnore]
-        public string PlayersDisplay => $"{Player1} vs. {Player2}";
-
-        [Newtonsoft.Json.JsonIgnore]
-        public string DateDisplay => DateUtc.ToLocalTime().ToString("d") + " " + DateUtc.ToLocalTime().ToString("t");
 
     }
 }
