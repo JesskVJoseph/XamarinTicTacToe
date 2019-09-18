@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TicTacToe.View.GamePage"
+             NavigationPage.BackButtonTitle="Back">
+
+    <AbsoluteLayout>
+
+        <Image Source="{Binding GameOverExpression}" 
+                IsVisible="{Binding IsGameOver}" 
+                AbsoluteLayout.LayoutBounds="0.50,  0.1,  0.15,  0.15" AbsoluteLayout.LayoutFlags="All">
+        </Image>
+
+        <!--x, y,width,height-->
+        <Image Source="line_vertical_1.png" AutomationId="firstVerticalLine"   AbsoluteLayout.LayoutBounds  = "0.25,   0.5, 0.1, 0.50" AbsoluteLayout.LayoutFlags="All"/>
+
+        <Image Source="line_vertical_1.png" AutomationId="secondVerticalLine"  AbsoluteLayout.LayoutBounds  = "0.75,   0.5,  0.1,  0.50" AbsoluteLayout.LayoutFlags="All" />
+
+        <Image Source="line_horizontal_1.png" AutomationId="FirstHorizontalLine" AbsoluteLayout.LayoutBounds = "0,     0.4,  1,  0.10" AbsoluteLayout.LayoutFlags="All" />
+
+        <Image Source="line_horizontal_1.png" AutomationId="SecondHorizontalLine" AbsoluteLayout.LayoutBounds = "0,    0.6,  1,  0.10" AbsoluteLayout.LayoutFlags="All" />
+
+        <!-- first row -->
+        <Button               
+                Image="{Binding BoardPosition0}" 
+                Command="{Binding PlayCommand}"
+                CommandParameter="0"
+                AbsoluteLayout.LayoutBounds="0.05,  0.3,  0.15,  0.10" AbsoluteLayout.LayoutFlags="All"
+                AutomationId="Play0"/>
+
+        <Button  
+               Image="{Binding BoardPosition1}" 
+               Command="{Binding PlayCommand}"
+               CommandParameter="1"
+                AbsoluteLayout.LayoutBounds="0.50,  0.3,  0.15,  0.10" AbsoluteLayout.LayoutFlags="All"
+                AutomationId="Play1"/>
+
+        <Button  
+               Image="{Binding BoardPosition2}" 
+                Command="{Binding PlayCommand}"
+                CommandParameter="2"
+                AbsoluteLayout.LayoutBounds="0.90,  0.3,  0.15,  0.10" AbsoluteLayout.LayoutFlags="All"
+                AutomationId="Play2"/>
+
+        <!-- Second row -->
+
+        <Button  
+                Image="{Binding BoardPosition3}" 
+                Command="{Binding PlayCommand}"
+                CommandParameter="3"
+                AbsoluteLayout.LayoutBounds="0.05,  0.5,  0.15,  0.10" AbsoluteLayout.LayoutFlags="All"
+                AutomationId="Play3"/>
+
+        <Button  
+                Image="{Binding BoardPosition4}" 
+                Command="{Binding PlayCommand}"
+                CommandParameter="4"
+                AbsoluteLayout.LayoutBounds="0.50,  0.5,  0.15,  0.10" AbsoluteLayout.LayoutFlags="All"
+                AutomationId="Play4"/>
+
+        <Button  
+                Image="{Binding BoardPosition5}" 
+                Command="{Binding PlayCommand}"
+                CommandParameter="5"
+                AbsoluteLayout.LayoutBounds="0.90,  0.5,  0.15,  0.10" AbsoluteLayout.LayoutFlags="All"
+                AutomationId="Play5"/>
+
+
+        <!-- Third row -->
+
+        <Button  
+                Image="{Binding BoardPosition6}" 
+                Command="{Binding PlayCommand}"
+                CommandParameter="6"
+                AbsoluteLayout.LayoutBounds="0.05,  0.7,  0.15,  0.10" AbsoluteLayout.LayoutFlags="All"
+                AutomationId="Play6"/>
+
+        <Button  
+                Image="{Binding BoardPosition7}" 
+                Command="{Binding PlayCommand}"
+                CommandParameter="7"
+                AbsoluteLayout.LayoutBounds="0.50,  0.7,  0.15,  0.10" AbsoluteLayout.LayoutFlags="All"
+                AutomationId="Play7"/>
+
+        <Button  
+                Image="{Binding BoardPosition8}" 
+                Command="{Binding PlayCommand}"
+                CommandParameter="8"
+                AbsoluteLayout.LayoutBounds="0.90,  0.7,  0.15,  0.10" AbsoluteLayout.LayoutFlags="All"
+                AutomationId="Play8"/>
+        <Button
+               Text="PLAY AGAIN" 
+               Command="{Binding ResetCommand}"
+               IsVisible="{Binding IsGameOver}" 
+               TextColor="Blue" 
+               FontSize="Large"
+               AbsoluteLayout.LayoutBounds="0.50,  0.95,  0.35,  0.20" AbsoluteLayout.LayoutFlags="All"/>
+    </AbsoluteLayout>
+</ContentPage>
