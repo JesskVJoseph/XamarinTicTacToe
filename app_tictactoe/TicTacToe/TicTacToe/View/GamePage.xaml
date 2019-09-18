@@ -32,11 +32,11 @@
                Image="{Binding BoardPosition1}" 
                Command="{Binding PlayCommand}"
                CommandParameter="1"
-                AbsoluteLayout.LayoutBounds="0.50,  0.3,  0.15,  0.10" AbsoluteLayout.LayoutFlags="All"
-                AutomationId="Play1"/>
+               AbsoluteLayout.LayoutBounds="0.50,  0.3,  0.15,  0.10" AbsoluteLayout.LayoutFlags="All"
+               AutomationId="Play1"/>
 
         <Button  
-               Image="{Binding BoardPosition2}" 
+                Image="{Binding BoardPosition2}" 
                 Command="{Binding PlayCommand}"
                 CommandParameter="2"
                 AbsoluteLayout.LayoutBounds="0.90,  0.3,  0.15,  0.10" AbsoluteLayout.LayoutFlags="All"

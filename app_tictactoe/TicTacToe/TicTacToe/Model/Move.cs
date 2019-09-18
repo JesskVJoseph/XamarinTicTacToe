@@ -7,7 +7,6 @@ namespace TicTacToe.Model
   public  class Move
     {
         public int row { get; set; }
-
         public int col { get; set; }
     }
 }

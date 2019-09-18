@@ -7,10 +7,8 @@ namespace TicTacToe
 {
     public class HomeViewModel : ViewModelBase
     {
-
         public HomeViewModel(Page page) : base(page)
         {
-
         }
         
         public string Player1
